@@ -29,7 +29,7 @@ const Home = () => {
       background: "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')"
     },
     {
-      title: "Engineering Excellence Since 1988",
+              title: "The Future Solutions",
       subtitle: "Delivering innovative and sustainable structural solutions.",
       background: "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')"
     },
@@ -61,27 +61,21 @@ const Home = () => {
   const stats = [
     {
       icon: faChartLine,
-      number: 35,
+      number: 7,
       suffix: "+",
       text: "Years of Experience"
     },
     {
       icon: faBuilding,
-      number: 500,
+      number: 75,
       suffix: "+",
       text: "Successful Projects"
     },
     {
       icon: faUsers,
-      number: 100,
+      number: 95,
       suffix: "%",
       text: "Client Satisfaction"
-    },
-    {
-      icon: faTrophy,
-      number: 25,
-      suffix: "+",
-      text: "Industry Awards"
     }
   ];
 
@@ -113,7 +107,7 @@ const Home = () => {
     {
       name: "Rajesh K.",
       position: "Chancellor at SRM University",
-      quote: "Structures India delivered a top-notch project on time and within budget. Highly recommended!",
+              quote: "KRISHNA STRUCTURALS delivered a top-notch project on time and within budget. Highly recommended!",
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80"
     },
     {
@@ -145,10 +139,9 @@ const Home = () => {
           if (entry.isIntersecting) {
             // Animate counters
             const targetCounters = {
-              experience: 35,
-              projects: 500,
-              satisfaction: 100,
-              awards: 25
+              experience: 7,
+              projects: 75,
+              satisfaction: 95
             };
 
             Object.keys(targetCounters).forEach((key) => {
@@ -217,9 +210,9 @@ const Home = () => {
       {/* About Section */}
       <section className="about">
         <div className="container">
-          <h2>About Structures India</h2>
+          <h2>About KRISHNA STRUCTURALS</h2>
           <p>
-            With over 35 years of experience, we specialize in delivering innovative and sustainable engineering solutions. 
+            With over 7 years of experience, we specialize in delivering innovative and sustainable engineering solutions. 
             Our team of experts combines technical excellence with creative problem-solving to create structures that stand the test of time.
           </p>
           <Link to="/about" className="btn secondary-btn">

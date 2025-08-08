@@ -109,7 +109,7 @@ const Services = () => {
       {/* Breadcrumb */}
       <nav className="breadcrumb">
         <div className="container">
-          <Link to="/">Home</Link> > <span>Our Services</span>
+          <Link to="/">Home</Link> {'>'} <span>Our Services</span>
         </div>
       </nav>
 
@@ -119,12 +119,12 @@ const Services = () => {
           <div className="intro-content">
             <h2>What We Offer</h2>
             <p>
-              At Structures India, we provide a comprehensive range of structural engineering services to meet the diverse needs of our clients. 
+              At KRISHNA STRUCTURALS, we provide a comprehensive range of structural engineering services to meet the diverse needs of our clients. 
               Whether you're planning a new construction project, renovating an existing structure, or need consultation on structural integrity, 
               our team of experienced engineers is here to help.
             </p>
             <p>
-              Our services are backed by over 35 years of industry experience and a commitment to excellence in every project we undertake. 
+              Our services are backed by over 7 years of industry experience and a commitment to excellence in every project we undertake. 
               We combine technical expertise with innovative thinking to deliver solutions that are not only structurally sound but also 
               cost-effective and sustainable.
             </p>

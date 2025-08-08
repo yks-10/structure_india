@@ -69,7 +69,9 @@ const Contact = () => {
                 <FontAwesomeIcon icon={faMapMarkerAlt} />
                 <div>
                   <h3>Our Office</h3>
-                  <p>Kottur Post Office, Tamil Nadu, India</p>
+                  <p>1/224, kolinjippaty road,<br />
+                  Kattunayakkanpatty, Nilakottai taluk<br />
+                  Tamilnadu-624206</p>
                 </div>
               </div>
 
@@ -77,8 +79,8 @@ const Contact = () => {
                 <FontAwesomeIcon icon={faPhone} />
                 <div>
                   <h3>Phone</h3>
-                  <p>+91 98765 43210</p>
-                  <p>+91 98765 43211</p>
+                  <p>+91 9787706411</p>
+                  <p>+91 7094047131</p>
                 </div>
               </div>
 
@@ -86,8 +88,8 @@ const Contact = () => {
                 <FontAwesomeIcon icon={faEnvelope} />
                 <div>
                   <h3>Email</h3>
-                  <p>info@structuresindia.in</p>
-                  <p>support@structuresindia.in</p>
+                  <p>kamarajkrishna1@gmail.com</p>
+                  <p>krishnastruturals12@gmail.com</p>
                 </div>
               </div>
 
@@ -95,9 +97,7 @@ const Contact = () => {
                 <FontAwesomeIcon icon={faClock} />
                 <div>
                   <h3>Working Hours</h3>
-                  <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
-                  <p>Saturday: 9:00 AM - 1:00 PM</p>
-                  <p>Sunday: Closed</p>
+                  <p>All Days: 6:00 AM - 10:00 PM</p>
                 </div>
               </div>
 
@@ -213,15 +213,14 @@ const Contact = () => {
           <h2>Find Us</h2>
           <p>Visit our office location or get directions using the map below:</p>
           <div className="map-container">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.195286!2d77.8522841!3d10.195286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b074d29bdc48d3d%3A0x59184f8b91e1642c!2sKottur%20Post%20Office!5e0!3m2!1sen!2sin!4v1701234567890!5m2!1sen!2sin"
-              width="100%"
-              height="450"
-              style={{ border: 0 }}
-              allowFullScreen=""
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Structures India Office Location"
+          <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3926.7344246679045!2d77.88700507503395!3d10.202208989913743!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTDCsDEyJzA4LjAiTiA3N8KwNTMnMjIuNSJF!5e0!3m2!1sen!2sin!4v1754677642045!5m2!1sen!2sin"
+              width="100%" 
+              height="450" 
+              style={{border:0}}
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade"
+              title="KRISHNA STRUCTURALS Office Location"
             ></iframe>
           </div>
         </div>

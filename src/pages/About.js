@@ -24,10 +24,9 @@ const About = () => {
           if (entry.isIntersecting) {
             // Animate counters
             const targetCounters = {
-              experience: 35,
-              projects: 500,
-              satisfaction: 100,
-              awards: 25
+              experience: 7,
+              projects: 75,
+              satisfaction: 95
             };
 
             Object.keys(targetCounters).forEach((key) => {
@@ -64,31 +63,24 @@ const About = () => {
   const stats = [
     {
       icon: faChartLine,
-      number: 35,
+      number: 7,
       suffix: "+",
       text: "Years of Experience",
       key: "experience"
     },
     {
       icon: faBuilding,
-      number: 500,
+      number: 75,
       suffix: "+",
       text: "Successful Projects",
       key: "projects"
     },
     {
       icon: faUsers,
-      number: 100,
+      number: 95,
       suffix: "%",
       text: "Client Satisfaction",
       key: "satisfaction"
-    },
-    {
-      icon: faTrophy,
-      number: 25,
-      suffix: "+",
-      text: "Industry Awards",
-      key: "awards"
     }
   ];
 
@@ -96,7 +88,7 @@ const About = () => {
     {
       name: "Rajesh Kumar",
       position: "Founder & CEO",
-      bio: "With over 40 years of experience in structural engineering, Rajesh leads Structures India with a vision of excellence and innovation.",
+              bio: "With over 40 years of experience in structural engineering, Rajesh leads KRISHNA STRUCTURALS with a vision of excellence and innovation.",
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
     },
     {
@@ -128,14 +120,14 @@ const About = () => {
       <div className="about-header">
         <div className="container">
           <h1>About Us</h1>
-          <p>Learn more about Structures India and our commitment to excellence in structural engineering</p>
+          <p>Learn more about KRISHNA STRUCTURALS and our commitment to excellence in structural engineering</p>
         </div>
       </div>
 
       {/* Breadcrumb */}
       <nav className="breadcrumb">
         <div className="container">
-          <Link to="/">Home</Link> > <span>About Us</span>
+          <Link to="/">Home</Link> {'>'} <span>About Us</span>
         </div>
       </nav>
 
@@ -144,17 +136,17 @@ const About = () => {
         <div className="container">
           <div className="overview-content">
             <div className="overview-image">
-              <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Structures India Office" />
+              <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="KRISHNA STRUCTURALS Office" />
             </div>
             <div className="overview-text">
               <h2>Our Company</h2>
               <p>
-                Established in 1988, Structures India has evolved into one of the leading structural engineering firms in the country. 
+                Established in 2018, KRISHNA STRUCTURALS is a leading structural engineering firm in the country. 
                 We provide innovative, sustainable, and cost-effective structural engineering solutions with a commitment to excellence.
               </p>
               <p>
-                Our team of experienced engineers and architects work together to deliver projects that not only meet but exceed 
-                client expectations. We believe in building relationships based on trust, quality, and mutual success.
+                Our team of experienced engineers and architects work together to deliver projects that not only meet but exceed client expectations.
+                We believe in building relationships based on trust, quality, and mutual success.
               </p>
             </div>
           </div>
@@ -226,7 +218,7 @@ const About = () => {
                     <a href="https://twitter.com" target="_blank" rel="noreferrer">
                       <FontAwesomeIcon icon={faTwitterBrand} />
                     </a>
-                    <a href="mailto:rajesh@structuresindia.in" target="_blank" rel="noreferrer">
+                    <a href="mailto:rajesh@krishnastructurals.in" target="_blank" rel="noreferrer">
                       <FontAwesomeIcon icon={faEnvelope} />
                     </a>
                   </div>

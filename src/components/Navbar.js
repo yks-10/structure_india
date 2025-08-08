@@ -64,8 +64,8 @@ const Navbar = () => {
         <div className="logo-container">
           <Link to="/" onClick={closeMenu}>
             <div className="logo">
-              <h2>Structures India</h2>
-              <p>Engineering Excellence Since 1988</p>
+              <h2>KRISHNA STRUCTURALS</h2>
+                              <p>The Future Solutions</p>
             </div>
           </Link>
         </div>

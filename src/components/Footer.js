@@ -27,8 +27,8 @@ const Footer = () => {
         <div className="footer-content">
           <div className="footer-logo">
             <div className="logo">
-              <h3>Structures India</h3>
-              <p>ENGINEERING THE STRUCTURES SINCE 1988</p>
+              <h3>KRISHNA STRUCTURALS</h3>
+                              <p>THE FUTURE SOLUTIONS</p>
             </div>
           </div>
 
@@ -59,15 +59,17 @@ const Footer = () => {
             <address>
               <p>
                 <FontAwesomeIcon icon={faMapMarkerAlt} />
-                123 Engineering Way, Mumbai, India - 400001
+                1/224, kolinjippaty road,<br />
+                Kattunayakkanpatty, Nilakottai taluk<br />
+                Tamilnadu-624206
               </p>
               <p>
                 <FontAwesomeIcon icon={faPhone} />
-                +91 98765 43210
+                +91 9787706411
               </p>
               <p>
                 <FontAwesomeIcon icon={faEnvelope} />
-                info@structuresindia.in
+                kamarajkrishna1@gmail.com
               </p>
             </address>
             <div className="social-links">
@@ -88,7 +90,7 @@ const Footer = () => {
         </div>
 
         <div className="footer-bottom">
-          <p>&copy; {currentYear} Structures India. All Rights Reserved.</p>
+          <p>&copy; {currentYear} KRISHNA STRUCTURALS. All Rights Reserved.</p>
           <div className="footer-bottom-links">
             <Link to="/privacy-policy">Privacy Policy</Link>
             <Link to="/terms-of-service">Terms of Service</Link>
