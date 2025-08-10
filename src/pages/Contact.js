@@ -39,33 +39,45 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      // Create form data to avoid CORS issues
-      const formDataToSend = new FormData();
-      formDataToSend.append('fullName', formData.fullName);
-      formDataToSend.append('email', formData.email);
-      formDataToSend.append('phone', formData.phone);
-      formDataToSend.append('subject', formData.subject);
-      formDataToSend.append('message', formData.message);
-
-      const response = await fetch('https://script.google.com/macros/s/AKfycbz8_bM_E7IqS8slJlDzZ_LKzaq7B8axXLC8bUHvViBHOvzw_iiElStuBeEwytBqLADjUw/exec', {
+      console.log('Sending data to Google Sheets:', formData);
+      
+      const response = await fetch('https://script.google.com/macros/s/AKfycbxjJTTGMgtp-1fGHJE1qX7x07_cGGawoCnp8W_EQiqm7LGVMoNaw0EY7ZEAi9t6Dwk47g/exec', {
         method: 'POST',
-        mode: 'no-cors', // This helps with CORS issues
-        body: formDataToSend,
+        mode: 'cors',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          fullName: formData.fullName,
+          email: formData.email,
+          phone: formData.phone,
+          subject: formData.subject,
+          message: formData.message,
+        }),
       });
 
-      // Since no-cors mode doesn't give us response details, we'll assume success
-      alert('Message sent and data saved to Google Sheet!');
-      setIsSubmitted(true);
-      setFormData({
-        fullName: '',
-        email: '',
-        phone: '',
-        subject: '',
-        message: ''
-      });
+      console.log('Response status:', response.status);
+      console.log('Response headers:', response.headers);
+
+      if (response.ok) {
+        const result = await response.json();
+        console.log('Success response:', result);
+        alert('Message sent and data saved to Google Sheet!');
+        setIsSubmitted(true);
+        setFormData({
+          fullName: '',
+          email: '',
+          phone: '',
+          subject: '',
+          message: ''
+        });
+      } else {
+        console.error('Response not ok:', response.status, response.statusText);
+        alert('Failed to save data. Please try again.');
+      }
     } catch (error) {
       console.error('Network error:', error);
-      alert('Failed to connect to the server.');
+      alert('Failed to connect to the server. Error: ' + error.message);
     } finally {
       setIsSubmitting(false);
     }
