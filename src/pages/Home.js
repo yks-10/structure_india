@@ -105,22 +105,18 @@ const Home = () => {
 
   const testimonials = [
     {
-      name: "Rajesh K.",
-      position: "Chancellor at SRM University",
-              quote: "KRISHNA STRUCTURALS delivered a top-notch project on time and within budget. Highly recommended!",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80"
+      name: "Er.Durairajan",
+      position: "Chairman – Samy builders",
+      quote: "Excellent service! The team delivered beyond our expectations.",
+      image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80",
+      placeholder: "👨‍💼"
     },
     {
-      name: "Aditi M.",
-      position: "Director at Crescent Institutes",
-      quote: "Their engineering expertise and commitment to quality exceeded our expectations!",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80"
-    },
-    {
-      name: "Vikram S.",
-      position: "Project Manager, Maruti Suzuki",
-      quote: "Professional, reliable solutions. They truly understand modern construction!",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
+      name: "Thillaiselvam",
+      position: "GM-sunil industries limited",
+      quote: "Highly professional and skilled. Would love to work with them again.",
+      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80",
+      placeholder: "👨‍💻"
     }
   ];
 
@@ -255,8 +251,8 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Projects Section */}
-      <section className="projects-section">
+      {/* Projects Section - Hidden */}
+      {/* <section className="projects-section">
         <div className="container">
           <h2 className="section-title">Our Recent Projects</h2>
           <div className="projects-grid">
@@ -292,7 +288,7 @@ const Home = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Testimonials Section */}
       <section className="testimonials">
@@ -301,14 +297,20 @@ const Home = () => {
           <div className="testimonial-container">
             {testimonials.map((testimonial, index) => (
               <div key={index} className="testimonial-card">
-                <img 
-                  src={testimonial.image} 
-                  alt={testimonial.name} 
-                  className="testimonial-image"
-                  onError={(e) => {
-                    e.target.src = 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80';
-                  }}
-                />
+                <div className="testimonial-image-container">
+                  <img 
+                    src={testimonial.image} 
+                    alt={testimonial.name} 
+                    className="testimonial-image"
+                    onError={(e) => {
+                      e.target.style.display = 'none';
+                      e.target.nextElementSibling.style.display = 'flex';
+                    }}
+                  />
+                  <div className="testimonial-placeholder" style={{display: 'none'}}>
+                    <span className="placeholder-emoji">{testimonial.placeholder}</span>
+                  </div>
+                </div>
                 <p className="testimonial-quote">"{testimonial.quote}"</p>
                 <h4 className="testimonial-author">
                   {testimonial.name} <span>{testimonial.position}</span>

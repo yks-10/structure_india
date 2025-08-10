@@ -148,9 +148,9 @@ const Services = () => {
                   <FontAwesomeIcon icon={service.icon} className="service-icon" />
                   <h3>{service.title}</h3>
                   <p>{service.description}</p>
-                  <Link to={service.link} className="read-more">
+                  {/* <Link to={service.link} className="read-more">
                     Learn More
-                  </Link>
+                  </Link> */}
                 </div>
               </div>
             ))}

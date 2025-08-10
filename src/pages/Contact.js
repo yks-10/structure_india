@@ -17,13 +17,14 @@ import './Contact.css';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name: '',
+    fullName: '',
     email: '',
     phone: '',
     subject: '',
     message: ''
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -33,17 +34,44 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    setIsSubmitted(true);
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      subject: '',
-      message: ''
-    });
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch('https://script.google.com/macros/s/AKfycbz8_bM_E7IqS8slJlDzZ_LKzaq7B8axXLC8bUHvViBHOvzw_iiElStuBeEwytBqLADjUw/exec', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          fullName: formData.fullName,
+          email: formData.email,
+          phone: formData.phone,
+          subject: formData.subject,
+          message: formData.message,
+        }),
+      });
+
+      if (response.ok) {
+        alert('Message sent and data saved to Google Sheet!');
+        setIsSubmitted(true);
+        setFormData({
+          fullName: '',
+          email: '',
+          phone: '',
+          subject: '',
+          message: ''
+        });
+      } else {
+        alert('Failed to save data. Please try again.');
+      }
+    } catch (error) {
+      console.error('Network error:', error);
+      alert('Failed to connect to the server.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -133,12 +161,12 @@ const Contact = () => {
                   <h2>Send us a Message</h2>
                   
                   <div className="form-group">
-                    <label htmlFor="name">Full Name</label>
+                    <label htmlFor="fullName">Full Name</label>
                     <input
                       type="text"
-                      id="name"
-                      name="name"
-                      value={formData.name}
+                      id="fullName"
+                      name="fullName"
+                      value={formData.fullName}
                       onChange={handleChange}
                       placeholder="Enter your full name"
                       required
@@ -197,8 +225,12 @@ const Contact = () => {
                     ></textarea>
                   </div>
 
-                  <button type="submit" className="btn submit-btn">
-                    Send Message
+                  <button 
+                    type="submit" 
+                    className="btn submit-btn" 
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? 'Sending...' : 'Send Message'}
                   </button>
                 </form>
               )}
