@@ -189,9 +189,6 @@ const Services = () => {
               <Link to="/contact" className="btn primary-btn">
                 Request a Quote
               </Link>
-              <Link to="/projects" className="btn secondary-btn">
-                View Our Projects
-              </Link>
             </div>
           </div>
         </div>
