@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
 import './Clients.css';
 
 const Clients = () => {
@@ -12,21 +14,17 @@ const Clients = () => {
     "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
   ];
 
+  // Same testimonials data as Home page
   const testimonials = [
     {
-      name: "John Doe",
-      company: "Galaxy Hospitals",
+      name: "Er.Durairajan",
+      position: "Chairman – Samy builders",
       quote: "Excellent service! The team delivered beyond our expectations."
     },
     {
-      name: "Jane Smith",
-      company: "SRM University",
+      name: "Thillaiselvam",
+      position: "GM-sunil industries limited",
       quote: "Highly professional and skilled. Would love to work with them again."
-    },
-    {
-      name: "Robert Brown",
-      company: "Crescent Institute",
-      quote: "Amazing work! They truly understand structural engineering at its best."
     }
   ];
 
@@ -43,7 +41,7 @@ const Clients = () => {
       {/* Breadcrumb */}
       <nav className="breadcrumb">
         <div className="container">
-          <Link to="/">Home</Link>  <span>Our Clients</span>
+          <Link to="/">Home</Link> {" > "} <span>Our Clients</span>
         </div>
       </nav>
 
@@ -61,14 +59,23 @@ const Clients = () => {
               />
             ))}
           </div>
-          
-          <h2 className="testimonials-title">What Our Clients Say</h2>
-          <div className="testimonials">
+        </div>
+      </section>
+
+      {/* Testimonials Section - Same as Home page */}
+      <section className="testimonials">
+        <div className="container">
+          <h2>What Our Clients Say</h2>
+          <div className="testimonial-container">
             {testimonials.map((testimonial, index) => (
-              <div key={index} className="testimonial">
-                <p className="quote">"{testimonial.quote}"</p>
-                <h4 className="client-name">{testimonial.name}</h4>
-                <p className="client-company">{testimonial.company}</p>
+              <div key={index} className="testimonial-card">
+                <div className="testimonial-avatar hollow">
+                  <FontAwesomeIcon icon={faUser} />
+                </div>
+                <p className="testimonial-quote">"{testimonial.quote}"</p>
+                <h4 className="testimonial-author">
+                  {testimonial.name} <span>{testimonial.position}</span>
+                </h4>
               </div>
             ))}
           </div>
