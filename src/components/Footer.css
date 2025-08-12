@@ -314,6 +314,144 @@
     width: 32px;
     font-size: 13px;
   }
+  
+  .footer-bottom p,
+  .footer-bottom-links a {
+    font-size: 12px;
+  }
+  
+  .footer-bottom-links {
+    gap: 12px;
+  }
+}
+
+/* Force web view colors for mobile - ensuring footer visibility */
+@media (max-width: 768px) {
+  .footer {
+    background: linear-gradient(135deg, #00264d, #003366) !important;
+    color: #fff !important;
+  }
+  
+  .footer-logo .logo h3 {
+    color: #f4a700 !important;
+  }
+  
+  .footer-logo .logo p {
+    color: rgba(255, 255, 255, 0.8) !important;
+  }
+  
+  .footer-links h3,
+  .footer-services h3,
+  .footer-contact h3 {
+    color: #f4a700 !important;
+  }
+  
+  .footer-links h3::after,
+  .footer-services h3::after,
+  .footer-contact h3::after {
+    background: #f4a700 !important;
+  }
+  
+  .footer-links ul li a,
+  .footer-services ul li a {
+    color: rgba(255, 255, 255, 0.8) !important;
+  }
+  
+  .footer-contact address p {
+    color: rgba(255, 255, 255, 0.8) !important;
+  }
+  
+  .social-links a {
+    color: #f4a700 !important;
+    background-color: rgba(255, 255, 255, 0.1) !important;
+  }
+  
+  .social-links a:hover {
+    background-color: #f4a700 !important;
+    color: #00264d !important;
+  }
+  
+  .footer-bottom {
+    color: rgba(255, 255, 255, 0.8) !important;
+  }
+  
+  .footer-bottom-links a {
+    color: rgba(255, 255, 255, 0.8) !important;
+  }
+  
+  .footer-bottom-links a:hover {
+    color: #f4a700 !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer {
+    background: linear-gradient(135deg, #00264d, #003366) !important;
+    color: #fff !important;
+  }
+  
+  .footer-logo .logo h3 {
+    color: #f4a700 !important;
+  }
+  
+  .footer-links h3,
+  .footer-services h3,
+  .footer-contact h3 {
+    color: #f4a700 !important;
+  }
+  
+  .footer-links ul li a,
+  .footer-services ul li a {
+    color: rgba(255, 255, 255, 0.8) !important;
+  }
+  
+  .footer-contact address p {
+    color: rgba(255, 255, 255, 0.8) !important;
+  }
+  
+  .social-links a {
+    color: #f4a700 !important;
+  }
+  
+  .footer-bottom p,
+  .footer-bottom-links a {
+    color: rgba(255, 255, 255, 0.8) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    background: linear-gradient(135deg, #00264d, #003366) !important;
+    color: #fff !important;
+  }
+  
+  .footer-logo .logo h3 {
+    color: #f4a700 !important;
+  }
+  
+  .footer-links h3,
+  .footer-services h3,
+  .footer-contact h3 {
+    color: #f4a700 !important;
+  }
+  
+  .footer-links ul li a,
+  .footer-services ul li a {
+    color: rgba(255, 255, 255, 0.8) !important;
+  }
+  
+  .footer-contact address p {
+    color: rgba(255, 255, 255, 0.8) !important;
+  }
+  
+  .social-links a {
+    color: #f4a700 !important;
+  }
+  
+  .footer-bottom p,
+  .footer-bottom-links a {
+    color: rgba(255, 255, 255, 0.8) !important;
+  }
 }
 
 /* Dark mode support */

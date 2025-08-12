@@ -249,7 +249,7 @@ const About = () => {
   return (
     <div className="about-page">
       {/* Header */}
-      <div className="about-header">
+      <div className="contact-header">
         <div className="container">
           <h1>About Us</h1>
           <p>Learn more about KRISHNA STRUCTURALS and our commitment to excellence in structural engineering</p>

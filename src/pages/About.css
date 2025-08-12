@@ -979,7 +979,6 @@
   
   .stat-number {
     align-items: center;
-    color: var(--primary-color) !important;
     display: flex;
     font-size: clamp(2rem, 4vw, 3rem);
     font-weight: 700;
@@ -988,7 +987,6 @@
   }
   
   .stat-card p {
-    color: #555 !important;
     font-size: clamp(1rem, 2vw, 1.2rem);
     font-weight: 500;
     text-align: center;
@@ -996,10 +994,13 @@
   }
   
   .stat-icon {
-    color: var(--secondary-color) !important;
     font-size: clamp(2rem, 4vw, 2.5rem);
     margin-bottom: 15px;
     flex-shrink: 0;
+  }
+  
+  .stats-section .section-title:after {
+    background-color: var(--secondary-color) !important;
   }
   
   .mission-section {
@@ -1007,22 +1008,12 @@
     color: #e2e8f0 !important;
   }
   
-  .mission-box {
-    background: #2d3748 !important;
-    border-color: #4a5568 !important;
-    color: #e2e8f0 !important;
+  .mission-section .section-title:after {
+    background-color: var(--secondary-color) !important;
   }
   
-  .mission-box h2 {
-    color: #fbbf24 !important;
-  }
-  
-  .mission-box p {
-    color: #e2e8f0 !important;
-  }
-  
-  .clients-section {
-    background-color: #fff !important;
+  .clients-section .section-title:after {
+    background-color: var(--secondary-color) !important;
   }
 }
 

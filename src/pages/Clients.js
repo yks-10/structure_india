@@ -31,7 +31,7 @@ const Clients = () => {
   return (
     <div className="clients-page">
       {/* Header */}
-      <div className="clients-header">
+      <div className="contact-header">
         <div className="container">
           <h1>Our Clients</h1>
           <p>We take pride in working with these amazing companies</p>

@@ -91,6 +91,41 @@
   a:hover {
     color: #f4a700 !important;
   }
+  
+  /* Additional mobile text visibility fixes */
+  .container {
+    color: #333 !important;
+  }
+  
+  .main-content {
+    color: #333 !important;
+  }
+  
+  /* Ensure all text elements are visible */
+  * {
+    color: inherit !important;
+  }
+  
+  /* Specific text color overrides for mobile */
+  .text-primary {
+    color: #00264d !important;
+  }
+  
+  .text-secondary {
+    color: #555 !important;
+  }
+  
+  .text-muted {
+    color: #777 !important;
+  }
+  
+  .text-light {
+    color: #333 !important;
+  }
+  
+  .text-dark {
+    color: #00264d !important;
+  }
 }
 
 * {
@@ -290,15 +325,32 @@ a {
   .section-title {
     font-size: 1.6rem;
     margin-bottom: 20px;
+    color: #00264d !important;
   }
   
   .btn {
     padding: 8px 16px;
     font-size: 11px;
+    background-color: #f4a700 !important;
+    color: #fff !important;
   }
   
   body {
     font-size: 13px;
+    color: #333 !important;
+  }
+  
+  /* Ensure text visibility on small mobile */
+  h1, h2, h3, h4, h5, h6 {
+    color: #00264d !important;
+  }
+  
+  p, span, div {
+    color: #333 !important;
+  }
+  
+  a {
+    color: #00264d !important;
   }
 }
 
@@ -314,15 +366,32 @@ a {
   .section-title {
     font-size: 1.4rem;
     margin-bottom: 18px;
+    color: #00264d !important;
   }
   
   .btn {
     padding: 7px 14px;
     font-size: 10px;
+    background-color: #f4a700 !important;
+    color: #fff !important;
   }
   
   body {
     font-size: 12px;
+    color: #333 !important;
+  }
+  
+  /* Ensure text visibility on extra small mobile */
+  h1, h2, h3, h4, h5, h6 {
+    color: #00264d !important;
+  }
+  
+  p, span, div {
+    color: #333 !important;
+  }
+  
+  a {
+    color: #00264d !important;
   }
 }
 
