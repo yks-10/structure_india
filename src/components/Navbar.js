@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faTimes, faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import './Navbar.css';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  // const [isDarkMode, setIsDarkMode] = useState(false); // Commented out - always dark mode
   const location = useLocation();
 
   useEffect(() => {
@@ -15,14 +15,9 @@ const Navbar = () => {
       setIsScrolled(window.scrollY > 50);
     };
 
-    // Check for saved dark mode preference or system preference
-    const savedTheme = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    
-    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
-      setIsDarkMode(true);
-      document.documentElement.setAttribute('data-theme', 'dark');
-    }
+    // Always set dark theme as default
+    document.documentElement.setAttribute('data-theme', 'dark');
+    localStorage.setItem('theme', 'dark');
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -36,6 +31,8 @@ const Navbar = () => {
     setIsOpen(false);
   };
 
+  // Theme toggle functionality commented out - always dark mode
+  /*
   const toggleDarkMode = () => {
     const newDarkMode = !isDarkMode;
     setIsDarkMode(newDarkMode);
@@ -48,6 +45,7 @@ const Navbar = () => {
       localStorage.setItem('theme', 'light');
     }
   };
+  */
 
   const navLinks = [
     { path: '/', text: 'Home' },
@@ -65,7 +63,7 @@ const Navbar = () => {
           <Link to="/" onClick={closeMenu}>
             <div className="logo">
               <h2>KRISHNA STRUCTURALS</h2>
-                              <p>The Future Solutions</p>
+              <p>The Future Solutions</p>
             </div>
           </Link>
         </div>
@@ -84,6 +82,8 @@ const Navbar = () => {
         </div>
 
         <div className="nav-controls">
+          {/* Theme toggle button commented out - always dark mode */}
+          {/*
           <button 
             className="theme-toggle" 
             onClick={toggleDarkMode}
@@ -91,6 +91,7 @@ const Navbar = () => {
           >
             <FontAwesomeIcon icon={isDarkMode ? faSun : faMoon} />
           </button>
+          */}
           
           <div className="mobile-menu-btn" onClick={toggleMenu}>
             <FontAwesomeIcon icon={isOpen ? faTimes : faBars} />

@@ -98,6 +98,8 @@
   gap: 15px;
 }
 
+/* Theme toggle styles commented out - always dark mode */
+/*
 .theme-toggle {
   background: none;
   border: none;
@@ -115,10 +117,11 @@
 }
 
 .theme-toggle:hover {
-  background-color: rgba(244, 167, 0, 0.1);
+  background-color: rgba(244, 167, 0, 1);
   color: var(--secondary-color);
   transform: scale(1.1);
 }
+*/
 
 .mobile-menu-btn {
   display: none;
@@ -253,11 +256,14 @@
     padding: 6px;
   }
   
+  /* Theme toggle styles commented out - always dark mode */
+  /*
   .theme-toggle {
     font-size: 1rem;
     width: 35px;
     height: 35px;
   }
+  */
   
   .nav-controls {
     gap: 10px;
@@ -273,11 +279,14 @@
     font-size: 0.55rem;
   }
   
+  /* Theme toggle styles commented out - always dark mode */
+  /*
   .theme-toggle {
     font-size: 0.9rem;
     width: 32px;
     height: 32px;
   }
+  */
 }
 
 /* Dark mode support */
@@ -321,6 +330,8 @@
     color: #fbbf24;
   }
   
+  /* Theme toggle styles commented out - always dark mode */
+  /*
   .theme-toggle {
     color: #e2e8f0;
   }
@@ -329,6 +340,7 @@
     background-color: rgba(251, 191, 36, 0.2);
     color: #fbbf24;
   }
+  */
   
   .logo h2 {
     color: #fbbf24;
@@ -341,8 +353,9 @@
 
 /* Focus styles for accessibility */
 .nav-links a:focus,
-.mobile-menu-btn:focus,
-.theme-toggle:focus {
+.mobile-menu-btn:focus
+/* .theme-toggle:focus - commented out since theme toggle is removed */
+{
   outline: 2px solid var(--secondary-color);
   outline-offset: 2px;
 } 

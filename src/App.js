@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -12,6 +12,12 @@ import Clients from './pages/Clients';
 import './App.css';
 
 function App() {
+  useEffect(() => {
+    // Always set dark theme as default
+    document.documentElement.setAttribute('data-theme', 'dark');
+    localStorage.setItem('theme', 'dark');
+  }, []);
+
   return (
     <Router>
       <div className="App">

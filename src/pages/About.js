@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { 
@@ -17,18 +17,74 @@ import {
 import './About.css';
 
 const About = () => {
+  const [statsLoaded, setStatsLoaded] = useState(false);
+
   useEffect(() => {
+    const targetCounters = {
+      experience: 7,
+      projects: 75,
+      satisfaction: 95
+    };
+
+    // Set initial values immediately for all devices
+    const setInitialValues = () => {
+      Object.keys(targetCounters).forEach((key) => {
+        const element = document.querySelector(`[data-counter="${key}"]`);
+        if (element) {
+          element.textContent = targetCounters[key];
+          // Ensure the element is visible
+          element.style.opacity = '1';
+          element.style.visibility = 'visible';
+          element.style.display = 'block';
+          
+          // Debug logging for mobile
+          console.log(`Set ${key} counter to ${targetCounters[key]}`);
+        } else {
+          console.log(`Counter element for ${key} not found`);
+        }
+      });
+    };
+
+    // Set values immediately
+    setInitialValues();
+    setStatsLoaded(true);
+
+    // Also set values after a short delay to ensure DOM is ready
+    setTimeout(setInitialValues, 100);
+    setTimeout(setInitialValues, 500);
+
+    // Mobile-specific visibility check
+    const checkMobileVisibility = () => {
+      const isMobile = window.innerWidth <= 768;
+      if (isMobile) {
+        console.log('Mobile device detected, ensuring stats visibility');
+        const statItems = document.querySelectorAll('.stat-item');
+        console.log(`Found ${statItems.length} stat items`);
+        
+        statItems.forEach((item, index) => {
+          const h3 = item.querySelector('h3');
+          const p = item.querySelector('p');
+          const icon = item.querySelector('.stat-icon');
+          
+          console.log(`Stat item ${index}:`, {
+            h3: h3 ? h3.textContent : 'not found',
+            p: p ? p.textContent : 'not found',
+            icon: icon ? 'found' : 'not found'
+          });
+        });
+      }
+    };
+
+    // Check visibility on mobile
+    checkMobileVisibility();
+    setTimeout(checkMobileVisibility, 200);
+    setTimeout(checkMobileVisibility, 1000);
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
+          if (entry.isIntersecting && !statsLoaded) {
             // Animate counters
-            const targetCounters = {
-              experience: 7,
-              projects: 75,
-              satisfaction: 95
-            };
-
             Object.keys(targetCounters).forEach((key) => {
               const target = targetCounters[key];
               const increment = target / 50;
@@ -49,7 +105,7 @@ const About = () => {
           }
         });
       },
-      { threshold: 0.5 }
+      { threshold: 0.1, rootMargin: '0px 0px -100px 0px' }
     );
 
     const statsSection = document.querySelector('.stats');
@@ -57,8 +113,83 @@ const About = () => {
       observer.observe(statsSection);
     }
 
-    return () => observer.disconnect();
-  }, []);
+    // Also observe on scroll for mobile devices
+    const handleScroll = () => {
+      const statsSection = document.querySelector('.stats');
+      if (statsSection) {
+        const rect = statsSection.getBoundingClientRect();
+        const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+        
+        if (isVisible && !statsLoaded) {
+          const counters = document.querySelectorAll('[data-counter]');
+          counters.forEach(counter => {
+            const key = counter.getAttribute('data-counter');
+            const target = targetCounters[key];
+            if (target && counter.textContent === '0') {
+              // Trigger animation
+              let current = 0;
+              const increment = target / 50;
+              
+              const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                  current = target;
+                  clearInterval(timer);
+                }
+                counter.textContent = Math.floor(current);
+              }, 50);
+            }
+          });
+        }
+      }
+    };
+
+    // Add scroll listener for mobile
+    window.addEventListener('scroll', handleScroll);
+    
+    // Initial check
+    handleScroll();
+
+    // Ensure stats are visible on mobile
+    const ensureMobileVisibility = () => {
+      const statItems = document.querySelectorAll('.stat-item');
+      statItems.forEach(item => {
+        item.style.display = 'block';
+        item.style.visibility = 'visible';
+        item.style.opacity = '1';
+        
+        const h3 = item.querySelector('h3');
+        const p = item.querySelector('p');
+        const icon = item.querySelector('.stat-icon');
+        
+        if (h3) {
+          h3.style.display = 'block';
+          h3.style.visibility = 'visible';
+          h3.style.opacity = '1';
+        }
+        if (p) {
+          p.style.display = 'block';
+          p.style.visibility = 'visible';
+          p.style.opacity = '1';
+        }
+        if (icon) {
+          icon.style.display = 'block';
+          icon.style.visibility = 'visible';
+          icon.style.opacity = '1';
+        }
+      });
+    };
+
+    // Ensure visibility on mobile
+    ensureMobileVisibility();
+    setTimeout(ensureMobileVisibility, 200);
+    setTimeout(ensureMobileVisibility, 500);
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [statsLoaded]);
 
   const stats = [
     {
@@ -152,14 +283,21 @@ const About = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="section stats-section">
+      <section className="section stats-section" id="stats-section">
         <div className="container">
           <div className="stats">
             {stats.map((stat, index) => (
               <div key={index} className="stat-item">
-                <FontAwesomeIcon icon={stat.icon} className="stat-icon" />
-                <h3 data-counter={stat.key}>0</h3>
-                <p>{stat.text}</p>
+                <FontAwesomeIcon 
+                  icon={stat.icon} 
+                  className="stat-icon" 
+                />
+                <h3 data-counter={stat.key}>
+                  {stat.number}
+                </h3>
+                <p>
+                  {stat.text}
+                </p>
               </div>
             ))}
           </div>
