@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -16,7 +16,6 @@ import {
   faRoadBarrier,
 } from '@fortawesome/free-solid-svg-icons';
 import './Projects.css';
-import navalVideo from '../assets/video/naval.mp4';
 
 const whatWeDoItems = [
   { label: 'Marriage hall buildings', icon: faLandmark },
@@ -61,6 +60,18 @@ const successfulProjects = [
 ];
 
 const Projects = () => {
+  const [videoLoading, setVideoLoading] = useState(true);
+  const [videoError, setVideoError] = useState(false);
+
+  const handleVideoLoad = () => {
+    setVideoLoading(false);
+  };
+
+  const handleVideoError = () => {
+    setVideoLoading(false);
+    setVideoError(true);
+  };
+
   return (
     <div className="projects-page">
       {/* Header */}
@@ -107,11 +118,29 @@ const Projects = () => {
         {/* Project Video */}
         <section className="section project-video">
           <h2 className="section-title">Project Walkthrough</h2>
-          <div className="video-wrapper">
-            <video controls preload="metadata">
-              <source src={navalVideo} type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+          <div className={`video-wrapper ${videoLoading ? 'loading' : ''}`}>
+            {!videoError ? (
+              <video 
+                controls 
+                preload="metadata"
+                width="100%"
+                height="auto"
+                onLoadedData={handleVideoLoad}
+                onError={handleVideoError}
+              >
+                <source src="/assets/video/naval.mp4" type="video/mp4" />
+                <p>Your browser does not support the video tag. 
+                  <a href="/assets/video/naval.mp4" download>Download the video</a> instead.
+                </p>
+              </video>
+            ) : (
+              <div style={{ padding: '40px 20px', textAlign: 'center', color: '#fff', background: '#2d3748' }}>
+                <p>Video could not be loaded.</p>
+                <a href="/assets/video/naval.mp4" download style={{ color: 'var(--secondary-color)', textDecoration: 'none', fontWeight: '600' }}>
+                  Download the video instead
+                </a>
+              </div>
+            )}
           </div>
         </section>
       </div>
