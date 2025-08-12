@@ -1,239 +1,141 @@
+/* Page base (inherits dark theme variables) */
 .projects-page {
-  background-color: #f4f4f4;
+  background: var(--white);
   font-family: 'Poppins', sans-serif;
-  padding-bottom: 50px;
 }
 
 /* Header */
 .projects-header {
-  background-color: var(--primary-color);
+  background: var(--primary-color);
   color: #fff;
-  font-size: 25px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  padding-bottom: 30px;
-  padding-top: 100px;
+  padding: 90px 0 40px;
   text-align: center;
 }
 
 .projects-header h1 {
   font-size: 2.5rem;
-  margin-bottom: 10px;
+  margin: 0 0 10px 0;
 }
 
 .projects-header p {
-  font-size: 1.2rem;
   opacity: 0.9;
 }
 
-/* Breadcrumb */
-.breadcrumb {
-  background: #f8f9fa;
-  padding: 15px 0;
+/* What We Do */
+.what-we-do {
+  padding: 60px 0 20px;
 }
 
-.breadcrumb a {
-  color: var(--primary-color);
-  font-weight: 500;
-  text-decoration: none;
-}
-
-.breadcrumb a:hover {
-  color: var(--secondary-color);
-}
-
-.breadcrumb span {
-  color: #777;
-}
-
-/* Projects Content */
-.projects-content {
-  align-items: flex-start;
-  display: flex;
-  gap: 40px;
-  margin: auto;
-  max-width: 1200px;
-  padding: 40px 20px;
-}
-
-/* Categories Sidebar */
-.categories {
-  display: flex;
-  flex-direction: column;
-  width: 280px;
-}
-
-.categories button {
-  background-color: var(--primary-color);
-  border: none;
-  border-left: 5px solid transparent;
-  border-radius: 5px;
-  color: #fff;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: 500;
-  margin-bottom: 8px;
-  padding: 14px;
-  text-align: left;
-  transition: 0.3s ease;
-}
-
-.categories button:hover,
-.categories button.active {
-  background-color: var(--secondary-color);
-  border-left: 5px solid var(--primary-color);
-  color: #000;
-  font-weight: 600;
-}
-
-/* Projects Grid */
-.projects-grid {
-  flex: 2 1;
-}
-
-.category-title {
-  color: var(--primary-color);
-  font-size: 22px;
-  font-weight: 600;
-  margin-bottom: 20px;
-}
-
-.projects-list {
-  display: flex;
-  flex-wrap: wrap;
+.what-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(220px, 1fr));
   gap: 20px;
-  justify-content: flex-start;
 }
 
-.project-card {
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  transition: transform 0.3s ease;
-  width: 300px;
+.what-card {
+  background: #2d3748;
+  border: 1px solid #4a5568;
+  border-radius: 12px;
+  padding: 20px 16px;
+  text-align: center;
+  color: #e2e8f0;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
 }
 
-.project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-}
-
-.project-card img {
-  border-radius: 5px 5px 0 0;
-  height: 200px;
-  object-fit: cover;
-  width: 100%;
-}
-
-.project-info {
-  padding: 15px;
-}
-
-.project-title {
-  color: var(--primary-color);
-  font-size: 18px;
-  font-weight: 600;
-  margin: 0 0 8px 0;
-  line-height: 1.3;
-}
-
-.project-location {
-  color: #666;
-  font-size: 14px;
-  font-weight: 500;
-  margin: 0 0 5px 0;
-}
-
-.project-year {
+.what-icon {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
   color: var(--secondary-color);
-  font-size: 12px;
+}
+
+/* Hollow icon style */
+.what-icon.hollow {
+  width: 58px;
+  height: 58px;
+  border: 2px solid var(--secondary-color);
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 12px auto;
+  color: var(--secondary-color);
+  background: transparent;
+}
+
+.what-label {
   font-weight: 600;
-  margin: 0 0 8px 0;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
 }
 
-.project-description {
-  color: #555;
-  font-size: 13px;
-  line-height: 1.4;
+/* Successful Projects */
+.success-projects {
+  padding: 30px 0 80px;
+}
+
+/* Grid list as cards */
+.success-list {
   margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: project;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(260px, 1fr));
+  gap: 18px;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
 }
 
-/* Responsive Design */
-@media (max-width: 1024px) {
-  .projects-content {
-    flex-direction: column;
-    gap: 30px;
-  }
-
-  .categories {
-    width: 100%;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-
-  .categories button {
-    flex: 1;
-    min-width: 200px;
-    text-align: center;
-  }
-
-  .projects-list {
-    justify-content: center;
-  }
+.success-list li {
+  counter-increment: project;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  background: #2d3748;
+  border: 1px solid #4a5568;
+  border-radius: 12px;
+  color: #e2e8f0;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
-@media (max-width: 768px) {
-  .projects-header {
-    padding: 80px 20px 30px;
-  }
+.success-list li::before {
+  content: counter(project);
+  flex: 0 0 40px;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border: 2px solid var(--secondary-color);
+  color: var(--secondary-color);
+  border-radius: 12px; /* hollow badge */
+  font-weight: 800;
+  background: transparent;
+}
 
-  .projects-header h1 {
-    font-size: 2rem;
-  }
+.success-list li:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.35);
+  border-color: #718096;
+}
 
-  .projects-header p {
-    font-size: 1rem;
-  }
-
-  .projects-content {
-    padding: 20px;
-  }
-
-  .categories button {
-    min-width: 150px;
-    font-size: 14px;
-    padding: 12px;
-  }
-
-  .project-card {
-    width: 100%;
-    max-width: 300px;
+/* Larger screens: 3 columns */
+@media (min-width: 1200px) {
+  .success-list {
+    grid-template-columns: repeat(3, minmax(260px, 1fr));
   }
 }
 
+/* Tablets: 2 columns (default above) */
+
+/* Mobile: 1 column */
 @media (max-width: 576px) {
-  .projects-header h1 {
-    font-size: 1.8rem;
+  .success-list {
+    grid-template-columns: 1fr;
+    gap: 14px;
   }
-
-  .categories {
-    flex-direction: column;
-  }
-
-  .categories button {
-    min-width: 100%;
-  }
-
-  .category-title {
-    font-size: 20px;
-    text-align: center;
-  }
-
-  .projects-list {
-    justify-content: center;
+  .success-list li::before {
+    flex-basis: 36px;
+    width: 36px;
+    height: 36px;
   }
 } 
