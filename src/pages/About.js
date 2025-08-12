@@ -237,10 +237,13 @@ const About = () => {
   ];
 
   const clients = [
-    "M/S sunil industries limited",
-    "M/S Rama spinners limited",
+    "PGT Exoports Dindigul",
+    "sunil industries limited",
+    "Dharani Rubber company",
+    "Rama spinners limited",
     "H and H precision limited",
-    "Dharani Rubber company"
+    "Saravana Tex Rajapalayam",
+
   ];
 
   return (
