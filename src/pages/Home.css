@@ -651,14 +651,22 @@
   transform: translateY(-10px);
 }
 
-.testimonial-image {
-  border-radius: 50%;
-  height: 80px;
+/* Hollow avatar icon to replace image */
+.testimonial-avatar {
   width: 80px;
+  height: 80px;
+  border-radius: 12px;
+  border: 2px solid var(--secondary-color);
+  display: grid;
+  place-items: center;
   margin: 0 auto 15px;
-  object-fit: cover;
-  border: 3px solid var(--secondary-color);
-  flex-shrink: 0;
+  color: var(--secondary-color);
+  background: transparent;
+  font-size: 2rem;
+}
+
+.testimonial-avatar.hollow {
+  border-radius: 12px; /* keep squared-rounded look like other hollow icons */
 }
 
 .testimonial-quote {

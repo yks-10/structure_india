@@ -9,7 +9,8 @@ import {
   faChartLine,
   faTools,
   faLightbulb,
-  faMapMarkerAlt
+  faMapMarkerAlt,
+  faUser
 } from '@fortawesome/free-solid-svg-icons';
 import './Home.css';
 
@@ -297,19 +298,8 @@ const Home = () => {
           <div className="testimonial-container">
             {testimonials.map((testimonial, index) => (
               <div key={index} className="testimonial-card">
-                <div className="testimonial-image-container">
-                  <img 
-                    src={testimonial.image} 
-                    alt={testimonial.name} 
-                    className="testimonial-image"
-                    onError={(e) => {
-                      e.target.style.display = 'none';
-                      e.target.nextElementSibling.style.display = 'flex';
-                    }}
-                  />
-                  <div className="testimonial-placeholder" style={{display: 'none'}}>
-                    <span className="placeholder-emoji">{testimonial.placeholder}</span>
-                  </div>
+                <div className="testimonial-avatar hollow">
+                  <FontAwesomeIcon icon={faUser} />
                 </div>
                 <p className="testimonial-quote">"{testimonial.quote}"</p>
                 <h4 className="testimonial-author">

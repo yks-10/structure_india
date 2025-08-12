@@ -16,6 +16,7 @@ import {
   faRoadBarrier,
 } from '@fortawesome/free-solid-svg-icons';
 import './Projects.css';
+import navalVideo from '../assets/video/naval.mp4';
 
 const whatWeDoItems = [
   { label: 'Marriage hall buildings', icon: faLandmark },
@@ -73,7 +74,7 @@ const Projects = () => {
       {/* Breadcrumb */}
       <nav className="breadcrumb">
         <div className="container">
-          <Link to="/">Home</Link> > <span>Projects</span>
+          <Link to="/">Home</Link> {" > "} <span>Projects</span>
         </div>
       </nav>
 
@@ -101,6 +102,17 @@ const Projects = () => {
               <li key={idx}>{name}</li>
             ))}
           </ol>
+        </section>
+
+        {/* Project Video */}
+        <section className="section project-video">
+          <h2 className="section-title">Project Walkthrough</h2>
+          <div className="video-wrapper">
+            <video controls preload="metadata">
+              <source src={navalVideo} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
         </section>
       </div>
     </div>

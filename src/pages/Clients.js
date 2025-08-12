@@ -62,18 +62,6 @@ const Clients = () => {
             ))}
           </div>
           
-          {/* Duplicate grid for continuous scroll effect */}
-          <div className="clients-grid">
-            {clients.map((client, index) => (
-              <img
-                key={`duplicate-${index}`}
-                src={client}
-                alt={`Client ${index + 1}`}
-                className="client-logo"
-              />
-            ))}
-          </div>
-
           <h2 className="testimonials-title">What Our Clients Say</h2>
           <div className="testimonials">
             {testimonials.map((testimonial, index) => (
