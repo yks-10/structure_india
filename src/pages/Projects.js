@@ -150,36 +150,6 @@ const Projects = () => {
             </div>
           </div>
           
-          {/* Local Video - Alternative */}
-          <div className="local-video-wrapper alternative-video">
-            <h3 style={{ textAlign: 'center', marginBottom: '20px', color: 'var(--text-primary)' }}>
-              Alternative: Download Video
-            </h3>
-            <div className={`video-wrapper ${videoLoading ? 'loading' : ''}`}>
-              {!videoError ? (
-                <video 
-                  controls 
-                  preload="metadata"
-                  width="100%"
-                  height="auto"
-                  onLoadedData={handleVideoLoad}
-                  onError={handleVideoError}
-                >
-                  <source src="/assets/video/naval.mp4" type="video/mp4" />
-                  <p>Your browser does not support the video tag. 
-                    <a href="/assets/video/naval.mp4" download>Download the video</a> instead.
-                  </p>
-                </video>
-              ) : (
-                <div style={{ padding: '40px 20px', textAlign: 'center', color: '#fff', background: '#2d3748' }}>
-                  <p>Video could not be loaded.</p>
-                  <a href="/assets/video/naval.mp4" download style={{ color: 'var(--secondary-color)', textDecoration: 'none', fontWeight: '600' }}>
-                    Download the video instead
-                  </a>
-                </div>
-              )}
-            </div>
-          </div>
         </section>
       </div>
     </div>
