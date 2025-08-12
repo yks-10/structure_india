@@ -173,6 +173,15 @@
   text-align: center;
 }
 
+/* Specific styling for Additional specialized services title */
+.specialized-services-section .section-title p {
+  color: #1a365d;
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 0 0 30px 0;
+  text-align: center;
+}
+
 .specialized-services {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -193,14 +202,16 @@
 }
 
 .specialized-service h3 {
-  color: var(--primary-color);
+  color: #ffffff;
   font-size: 1.5rem;
   margin-bottom: 10px;
+  font-weight: 600;
 }
 
 .specialized-service p {
-  color: #555;
+  color: #e2e8f0;
   font-size: 1.1rem;
+  line-height: 1.5;
 }
 
 .service-icon {
