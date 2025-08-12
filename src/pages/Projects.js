@@ -75,12 +75,12 @@ const Projects = () => {
   return (
     <div className="projects-page">
       {/* Header */}
-      <header className="projects-header">
+      <div className="contact-header">
         <div className="container">
           <h1>Projects</h1>
           <p>What we do and some of our successful projects</p>
         </div>
-      </header>
+      </div>
 
       {/* Breadcrumb */}
       <nav className="breadcrumb">
@@ -89,9 +89,9 @@ const Projects = () => {
         </div>
       </nav>
 
-      <div className="container">
-        {/* What We Do */}
-        <section className="section what-we-do">
+      {/* What We Do Section - First Container */}
+      <section className="what-we-do-section">
+        <div className="container">
           <h2 className="section-title">What We Do</h2>
           <div className="what-grid">
             {whatWeDoItems.map((item) => (
@@ -103,20 +103,24 @@ const Projects = () => {
               </div>
             ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Successful Projects */}
-        <section className="section success-projects">
+      {/* Successful Projects Section - Second Container */}
+      <section className="success-projects-section">
+        <div className="container">
           <h2 className="section-title">Successful Projects</h2>
           <ol className="success-list">
             {successfulProjects.map((name, idx) => (
               <li key={idx}>{name}</li>
             ))}
           </ol>
-        </section>
+        </div>
+      </section>
 
-        {/* Project Video */}
-        <section className="section project-video">
+      {/* Project Video Section - Third Container */}
+      <section className="project-video-section">
+        <div className="container">
           <h2 className="section-title">Project Walkthrough</h2>
           
           {/* YouTube Video - Primary */}
@@ -150,8 +154,8 @@ const Projects = () => {
             </div>
           </div>
           
-        </section>
-      </div>
+        </div>
+      </section>
     </div>
   );
 };

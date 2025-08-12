@@ -263,8 +263,8 @@ const About = () => {
         </div>
       </nav>
 
-      {/* Overview Section */}
-      <section className="section overview-section">
+      {/* Overview Section - First Container */}
+      <section className="overview-section">
         <div className="container">
           <div className="overview-content">
             <div className="overview-image">
@@ -285,19 +285,20 @@ const About = () => {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="section stats-section" id="stats-section">
+      {/* Stats Section - Second Container */}
+      <section className="stats-section" id="stats-section">
         <div className="container">
+          <h2 className="section-title">Why Choose Us?</h2>
           <div className="stats">
             {stats.map((stat, index) => (
-              <div key={index} className="stat-item">
+              <div key={index} className="stat-card">
                 <FontAwesomeIcon 
                   icon={stat.icon} 
                   className="stat-icon" 
                 />
-                <h3 data-counter={stat.key}>
+                <div className="stat-number" data-counter={stat.key}>
                   {stat.number}
-                </h3>
+                </div>
                 <p>
                   {stat.text}
                 </p>
@@ -307,9 +308,10 @@ const About = () => {
         </div>
       </section>
 
-      {/* Core Strengths Section */}
-      <section className="section mission-section">
+      {/* Core Strengths Section - Third Container */}
+      <section className="mission-section">
         <div className="container">
+          <h2 className="section-title">Our Core Strengths</h2>
           <div className="mission-content">
             <div className="mission-box">
               <h2>Customization</h2>
@@ -377,8 +379,8 @@ const About = () => {
         </div>
       </section> */}
 
-      {/* Clients Section */}
-      <section className="section clients-section">
+      {/* Clients Section - Fourth Container */}
+      <section className="clients-section">
         <div className="container">
           <h2 className="section-title">Our Top Clients</h2>
           <p className="section-subtitle">

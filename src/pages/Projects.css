@@ -45,9 +45,31 @@
   color: #777;
 }
 
-/* What We Do */
-.what-we-do {
-  padding: 60px 0 20px;
+/* What We Do Section - First Container */
+.what-we-do-section {
+  background-color: #e6f3ff;
+  padding: 60px 0;
+}
+
+.what-we-do-section .section-title {
+  color: var(--primary-color);
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  margin-bottom: 40px;
+  position: relative;
+  text-align: center;
+  font-weight: 700;
+}
+
+.what-we-do-section .section-title:after {
+  background-color: var(--secondary-color);
+  bottom: -10px;
+  content: "";
+  height: 4px;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+  width: 80px;
+  border-radius: 2px;
 }
 
 .what-grid {
@@ -57,19 +79,19 @@
 }
 
 .what-card {
-  background: #2d3748;
-  border: 1px solid #4a5568;
+  background: #fff;
+  border: 1px solid #dee2e6;
   border-radius: 12px;
   padding: 20px 16px;
   text-align: center;
-  color: #e2e8f0;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+  color: #333;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .what-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.15);
 }
 
 .what-icon {
@@ -94,11 +116,34 @@
 .what-label {
   font-weight: 600;
   font-size: clamp(0.9rem, 2vw, 1rem);
+  color: #333;
 }
 
-/* Successful Projects */
-.success-projects {
-  padding: 30px 0 80px;
+/* Successful Projects Section - Second Container */
+.success-projects-section {
+  background-color: #fff;
+  padding: 60px 0;
+}
+
+.success-projects-section .section-title {
+  color: var(--primary-color);
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  margin-bottom: 40px;
+  position: relative;
+  text-align: center;
+  font-weight: 700;
+}
+
+.success-projects-section .section-title:after {
+  background-color: var(--secondary-color);
+  bottom: -10px;
+  content: "";
+  height: 4px;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+  width: 80px;
+  border-radius: 2px;
 }
 
 /* Grid list as cards */
@@ -121,11 +166,11 @@
   align-items: center;
   gap: 12px;
   padding: 14px 16px;
-  background: #2d3748;
-  border: 1px solid #4a5568;
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
   border-radius: 12px;
-  color: #e2e8f0;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+  color: #333;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
   font-size: clamp(0.9rem, 2vw, 1rem);
 }
@@ -146,13 +191,36 @@
 
 .success-list li:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.35);
-  border-color: #718096;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.15);
+  border-color: var(--secondary-color);
 }
 
-/* Project Video */
-.project-video {
-  padding: 40px 0 80px;
+/* Project Video Section - Third Container */
+.project-video-section {
+  background: linear-gradient(135deg, #1a202c, #2d3748);
+  padding: 60px 0;
+  color: #e2e8f0;
+}
+
+.project-video-section .section-title {
+  color: #fbbf24;
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  margin-bottom: 40px;
+  position: relative;
+  text-align: center;
+  font-weight: 700;
+}
+
+.project-video-section .section-title:after {
+  background-color: #fbbf24;
+  bottom: -10px;
+  content: "";
+  height: 4px;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+  width: 80px;
+  border-radius: 2px;
 }
 
 .video-wrapper {
@@ -249,15 +317,15 @@
     padding: 80px 0 35px;
   }
   
-  .what-we-do {
-    padding: 50px 0 20px;
+  .what-we-do-section {
+    padding: 50px 0;
   }
   
-  .success-projects {
-    padding: 25px 0 70px;
+  .success-projects-section {
+    padding: 50px 0;
   }
   
-  .project-video {
+  .project-video-section {
     padding: 35px 0 70px;
   }
   
@@ -279,8 +347,8 @@
     font-size: clamp(0.9rem, 3vw, 1.1rem);
   }
   
-  .what-we-do {
-    padding: 40px 0 20px;
+  .what-we-do-section {
+    padding: 40px 0;
   }
   
   .what-grid {
@@ -301,8 +369,8 @@
     font-size: 1.6rem;
   }
   
-  .success-projects {
-    padding: 20px 0 60px;
+  .success-projects-section {
+    padding: 40px 0;
   }
   
   .success-list {
@@ -322,7 +390,7 @@
     font-size: 0.9rem;
   }
   
-  .project-video {
+  .project-video-section {
     padding: 30px 0 60px;
   }
   
@@ -350,8 +418,8 @@
     font-size: clamp(0.8rem, 3.5vw, 0.9rem);
   }
   
-  .what-we-do {
-    padding: 35px 0 20px;
+  .what-we-do-section {
+    padding: 35px 0;
   }
   
   .what-grid {
@@ -379,8 +447,8 @@
     font-size: clamp(0.8rem, 2.5vw, 0.9rem);
   }
   
-  .success-projects {
-    padding: 15px 0 50px;
+  .success-projects-section {
+    padding: 35px 0;
   }
   
   .success-list {
@@ -399,7 +467,7 @@
     font-size: 0.8rem;
   }
   
-  .project-video {
+  .project-video-section {
     padding: 25px 0 50px;
   }
   
@@ -431,7 +499,7 @@
     font-size: clamp(0.75rem, 4vw, 0.8rem);
   }
   
-  .what-we-do {
+  .what-we-do-section {
     padding: 30px 0 15px;
   }
   
@@ -452,8 +520,8 @@
     font-size: 1.2rem;
   }
   
-  .success-projects {
-    padding: 10px 0 40px;
+  .success-projects-section {
+    padding: 20px 0 40px;
   }
   
   .success-list li {
@@ -468,7 +536,7 @@
     font-size: 0.75rem;
   }
   
-  .project-video {
+  .project-video-section {
     padding: 20px 0 40px;
   }
   
@@ -505,6 +573,24 @@
   
   .breadcrumb span {
     color: #6c757d;
+  }
+  
+  /* Projects page specific light mode styles */
+  .what-we-do-section {
+    background-color: #e6f3ff;
+  }
+  
+  .success-projects-section {
+    background-color: #fff;
+  }
+  
+  .project-video-section {
+    background: linear-gradient(135deg, #1a202c, #2d3748);
+    color: #e2e8f0;
+  }
+  
+  .project-video-section .section-title {
+    color: #fbbf24;
   }
 }
 
@@ -563,6 +649,24 @@
   
   .projects-header p {
     color: #e2e8f0 !important;
+  }
+  
+  /* Projects page specific mobile styles */
+  .what-we-do-section {
+    background-color: #e6f3ff !important;
+  }
+  
+  .success-projects-section {
+    background-color: #fff !important;
+  }
+  
+  .project-video-section {
+    background: linear-gradient(135deg, #1a202c, #2d3748) !important;
+    color: #e2e8f0 !important;
+  }
+  
+  .project-video-section .section-title {
+    color: #fbbf24 !important;
   }
 }
 
@@ -635,14 +739,19 @@
     height: 300px;
   }
   
-  .local-video-wrapper.alternative-video {
-    padding: 0 15px;
-    padding-top: 25px;
+  .what-we-do-section,
+  .success-projects-section {
+    padding: 40px 0;
   }
   
-  .local-video-wrapper.alternative-video h3 {
-    font-size: 1.2rem;
-    margin-bottom: 18px;
+  .what-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  
+  .success-list {
+    grid-template-columns: 1fr;
+    gap: 15px;
   }
 }
 
@@ -654,47 +763,59 @@
   
   .youtube-video-wrapper.primary-video h3 {
     font-size: 1.2rem;
-    margin-bottom: 18px;
+    margin-bottom: 15px;
   }
   
   .youtube-embed iframe {
     height: 250px;
-    border-radius: 8px;
   }
   
-  .local-video-wrapper.alternative-video {
-    padding: 0 10px;
-    padding-top: 20px;
+  .what-we-do-section,
+  .success-projects-section {
+    padding: 30px 0;
   }
   
-  .local-video-wrapper.alternative-video h3 {
-    font-size: 1.1rem;
-    margin-bottom: 15px;
+  .what-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .what-card {
+    padding: 15px 12px;
+  }
+  
+  .what-icon.hollow {
+    width: 50px;
+    height: 50px;
+    font-size: 1.4rem;
+  }
+  
+  .success-list li {
+    padding: 12px 14px;
+    font-size: 0.9rem;
+  }
+  
+  .success-list li::before {
+    width: 35px;
+    height: 35px;
+    font-size: 0.9rem;
   }
 }
 
 @media (max-width: 480px) {
-  .youtube-video-wrapper.primary-video {
-    margin-bottom: 20px;
-    padding: 0 8px;
+  .what-we-do-section,
+  .success-projects-section {
+    padding: 25px 0;
   }
   
-  .youtube-video-wrapper.primary-video h3 {
-    font-size: 1.1rem;
-    margin-bottom: 15px;
+  .what-we-do-section .section-title,
+  .success-projects-section .section-title,
+  .project-video-section .section-title {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    margin-bottom: 30px;
   }
   
   .youtube-embed iframe {
     height: 200px;
-  }
-  
-  .local-video-wrapper.alternative-video {
-    padding: 0 8px;
-    padding-top: 15px;
-  }
-  
-  .local-video-wrapper.alternative-video h3 {
-    font-size: 1rem;
-    margin-bottom: 12px;
   }
 }

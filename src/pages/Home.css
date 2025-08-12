@@ -333,7 +333,7 @@
 
 /* Stats Section */
 .why-choose {
-  background: linear-gradient(135deg, #f0f5fa, #e0ecf7);
+  background-color: #e6f3ff;
   padding: 80px 0;
   position: relative;
   text-align: center;
@@ -1145,7 +1145,7 @@
   }
   
   .why-choose {
-    background: linear-gradient(135deg, #2d3748, #4a5568);
+    background-color: #e6f3ff;
   }
   
   .why-choose h2 {
@@ -1331,7 +1331,7 @@
   }
   
   .why-choose {
-    background: linear-gradient(135deg, #f0f5fa, #e0ecf7);
+    background-color: #e6f3ff;
   }
   
   .why-choose h2 {
@@ -1430,7 +1430,7 @@
   }
   
   .why-choose {
-    background: linear-gradient(135deg, #f0f5fa, #e0ecf7) !important;
+    background-color: #e6f3ff !important;
   }
   
   .why-choose h2 {

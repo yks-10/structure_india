@@ -4,56 +4,11 @@
   line-height: 1.6;
 }
 
-/* Critical mobile-first stats display - updated for new design */
+/* Stats section styling */
 .stats-section {
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-  background: #2d3748 !important; /* Dark grey background */
-}
-
-.stats {
-  display: flex !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-  flex-wrap: wrap;
-  gap: 30px;
-  justify-content: center;
-}
-
-.stat-item {
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-  background: #4a5568 !important; /* Card background */
-  color: #fff !important;
-  border: 1px solid #718096 !important; /* Border */
-  border-radius: 12px !important;
-}
-
-.stat-item h3 {
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-  color: #fbbf24 !important; /* Yellow text */
-  font-size: 3rem !important;
-  font-weight: 800 !important;
-}
-
-.stat-item p {
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-  color: #e2e8f0 !important; /* Light grey text */
-  font-size: 1.1rem !important;
-}
-
-.stat-item .stat-icon {
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-  color: #fbbf24 !important; /* Yellow icon */
-  font-size: 2.5rem !important;
+  display: block;
+  visibility: visible;
+  opacity: 1;
 }
 
 /* Header */
@@ -97,9 +52,9 @@
   color: #777;
 }
 
-/* Overview Section */
+/* Overview Section - First Container */
 .overview-section {
-  background: #fff;
+  background-color: #e6f3ff;
   padding: 80px 20px;
 }
 
@@ -140,76 +95,117 @@
   margin-bottom: 15px;
 }
 
-/* Stats Section - Matching the image design */
+/* Stats Section - Second Container - Matching Home page "Why Choose Us?" styling */
 .stats-section {
-  background: #2d3748; /* Dark grey background as shown in image */
-  padding: 80px 20px;
+  background-color: #e6f3ff;
+  padding: 80px 0;
+  position: relative;
+  text-align: center;
+}
+
+.stats-section .section-title {
+  color: var(--primary-color);
+  display: inline-block;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  margin-bottom: 60px;
+  position: relative;
+  font-weight: 700;
+  text-align: center;
+}
+
+.stats-section .section-title:after {
+  background: var(--secondary-color);
+  bottom: -15px;
+  content: "";
+  height: 4px;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+  width: 70px;
+  border-radius: 2px;
 }
 
 .stats {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 30px;
-  justify-content: center;
-  margin-top: 30px;
-  align-items: stretch;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 20px;
 }
 
-.stat-item {
-  background: #4a5568; /* Slightly lighter dark grey for cards */
-  border: 1px solid #718096; /* Light grey border as shown */
+.stat-card {
+  background: #fff;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  color: #fff;
-  min-width: 200px;
-  padding: 30px 25px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 40px 30px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  flex: 1 1 250px;
-  max-width: 300px;
-  position: relative;
-  overflow: hidden;
+  min-height: 200px;
 }
 
-.stat-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
-}
-
-.stat-item h3 {
-  font-size: 3rem;
-  font-weight: 800;
-  margin: 15px 0 10px 0;
-  min-height: auto;
-  display: block;
-  text-align: center;
-  color: #fbbf24; /* Bright yellow as shown in image */
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-  line-height: 1.2;
-}
-
-.stat-item p {
-  font-size: 1.1rem;
-  margin: 0;
-  line-height: 1.4;
-  font-weight: 500;
-  color: #e2e8f0; /* Light grey text as shown */
-  text-align: center;
+.stat-card:hover {
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  transform: translateY(-10px);
 }
 
 .stat-icon {
-  color: #fbbf24; /* Bright yellow icon as shown */
-  font-size: 2.5rem;
+  color: var(--secondary-color);
+  font-size: clamp(2rem, 4vw, 2.5rem);
   margin-bottom: 15px;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
-  display: block;
+  flex-shrink: 0;
 }
 
-/* Mission Section */
+.stat-number {
+  align-items: center;
+  color: var(--primary-color);
+  display: flex;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.stat-card p {
+  color: #555;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-weight: 500;
+  text-align: center;
+  margin: 0;
+}
+
+/* Mission Section - Third Container */
 .mission-section {
-  background: var(--light-gray);
+  background: linear-gradient(135deg, #1a202c, #2d3748);
   padding: 80px 20px;
   text-align: center;
+  color: #e2e8f0;
+}
+
+.mission-section .section-title {
+  color: #fbbf24;
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  margin-bottom: 40px;
+  position: relative;
+  text-align: center;
+  font-weight: 700;
+}
+
+.mission-section .section-title:after {
+  background-color: #fbbf24;
+  bottom: -10px;
+  content: "";
+  height: 4px;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+  width: 80px;
+  border-radius: 2px;
 }
 
 .mission-content {
@@ -220,23 +216,31 @@
 }
 
 .mission-box {
-  background: #fff;
+  background: #2d3748;
   border-radius: 12px;
-  box-shadow: var(--box-shadow);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
   flex: 1 1;
   max-width: 400px;
   min-width: 300px;
   padding: 30px;
+  border: 1px solid #4a5568;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mission-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  border-color: #718096;
 }
 
 .mission-box h2 {
-  color: var(--secondary-color);
+  color: #fbbf24;
   font-size: 2rem;
   margin-bottom: 10px;
 }
 
 .mission-box p {
-  color: #444;
+  color: #e2e8f0;
   font-size: 1rem;
   font-style: italic;
   line-height: 1.6;
@@ -317,12 +321,33 @@
   color: var(--secondary-color);
 }
 
-/* Clients Section */
+/* Clients Section - Fourth Container */
 .clients-section {
-  background: var(--light-gray);
+  background-color: #fff;
   overflow: hidden;
   padding: 80px 20px;
   position: relative;
+}
+
+.clients-section .section-title {
+  color: var(--primary-color);
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  margin-bottom: 20px;
+  position: relative;
+  text-align: center;
+  font-weight: 700;
+}
+
+.clients-section .section-title:after {
+  background-color: var(--secondary-color);
+  bottom: -10px;
+  content: "";
+  height: 4px;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+  width: 80px;
+  border-radius: 2px;
 }
 
 .clients-grid {
@@ -331,6 +356,30 @@
   gap: 40px;
   justify-content: center;
   padding: 20px 0;
+}
+
+.client-name {
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 12px;
+  padding: 20px 25px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  min-width: 250px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.client-name:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  border-color: var(--secondary-color);
+}
+
+.client-name h3 {
+  color: #333;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0;
 }
 
 .client-logo {
@@ -880,159 +929,181 @@
   .stat-icon {
     font-size: 1.6rem;
   }
-}
-
-/* Ensure stats are always visible with high contrast - updated for new design */
-.stat-item {
-  background: #4a5568 !important;
-  color: #fff !important;
-  border: 1px solid #718096 !important;
-}
-
-.stat-item h3 {
-  color: #fbbf24 !important;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
-}
-
-.stat-item p {
-  color: #e2e8f0 !important;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
-}
-
-.stat-item .stat-icon {
-  color: #fbbf24 !important;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.8));
 } 
 
-/* Mobile responsive styles - maintaining the image design */
+/* Ensure stats are always visible with proper styling */
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+} 
+
+/* Mobile responsive styles - maintaining the new design */
 @media (max-width: 768px) {
+  .overview-section {
+    background-color: #e6f3ff !important;
+  }
+  
   .stats-section {
-    background: #2d3748; /* Keep dark grey background */
-    padding: 60px 20px;
+    background-color: #e6f3ff !important;
+    padding: 60px 0;
   }
   
   .stats {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr;
     gap: 20px;
-    width: 100%;
+    padding: 0 20px;
   }
   
-  .stat-item {
+  .stat-card {
+    background: #fff !important;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 30px 25px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    max-width: 320px;
-    min-height: 140px;
-    padding: 30px 25px;
-    margin: 0 auto;
-    background: #4a5568; /* Keep card background */
-    border: 1px solid #718096; /* Keep border */
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  }
-  
-  .stat-item h3 {
-    font-size: 2.8rem;
-    font-weight: 800;
-    color: #fbbf24; /* Keep yellow color */
-    margin: 15px 0 10px 0;
     text-align: center;
-    line-height: 1.2;
-    min-height: auto;
-    display: block;
+    min-height: 200px;
   }
   
-  .stat-item p {
-    font-size: 1.1rem;
-    color: #e2e8f0; /* Keep light grey text */
+  .stat-card:hover {
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    transform: translateY(-10px);
+  }
+  
+  .stat-number {
+    align-items: center;
+    color: var(--primary-color) !important;
+    display: flex;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  
+  .stat-card p {
+    color: #555 !important;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    font-weight: 500;
     text-align: center;
     margin: 0;
-    font-weight: 500;
   }
   
   .stat-icon {
-    font-size: 2.3rem;
-    color: #fbbf24; /* Keep yellow icon */
+    color: var(--secondary-color) !important;
+    font-size: clamp(2rem, 4vw, 2.5rem);
     margin-bottom: 15px;
+    flex-shrink: 0;
+  }
+  
+  .mission-section {
+    background: linear-gradient(135deg, #1a202c, #2d3748) !important;
+    color: #e2e8f0 !important;
+  }
+  
+  .mission-box {
+    background: #2d3748 !important;
+    border-color: #4a5568 !important;
+    color: #e2e8f0 !important;
+  }
+  
+  .mission-box h2 {
+    color: #fbbf24 !important;
+  }
+  
+  .mission-box p {
+    color: #e2e8f0 !important;
+  }
+  
+  .clients-section {
+    background-color: #fff !important;
   }
 }
 
 @media (max-width: 576px) {
   .stats-section {
-    padding: 50px 15px;
+    padding: 50px 0;
   }
   
   .stats {
     gap: 18px;
+    padding: 0 15px;
   }
   
-  .stat-item {
-    max-width: 300px;
-    min-height: 130px;
+  .stat-card {
     padding: 25px 20px;
+    min-height: 180px;
   }
   
-  .stat-item h3 {
-    font-size: 2.5rem;
+  .stat-number {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
   }
   
-  .stat-item p {
-    font-size: 1rem;
+  .stat-card p {
+    font-size: clamp(0.9rem, 2vw, 1rem);
   }
   
   .stat-icon {
-    font-size: 2.1rem;
+    font-size: clamp(1.8rem, 4vw, 2.1rem);
   }
 }
 
 @media (max-width: 480px) {
   .stats-section {
-    padding: 40px 15px;
+    padding: 40px 0;
   }
   
-  .stat-item {
-    max-width: 280px;
-    min-height: 120px;
+  .stats {
+    padding: 0 12px;
+  }
+  
+  .stat-card {
     padding: 22px 18px;
+    min-height: 160px;
   }
   
-  .stat-item h3 {
-    font-size: 2.2rem;
+  .stat-number {
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
   }
   
-  .stat-item p {
-    font-size: 0.95rem;
+  .stat-card p {
+    font-size: clamp(0.85rem, 2vw, 0.95rem);
   }
   
   .stat-icon {
-    font-size: 2rem;
+    font-size: clamp(1.6rem, 4vw, 2rem);
   }
 }
 
 @media (max-width: 360px) {
   .stats-section {
-    padding: 30px 10px;
+    padding: 30px 0;
   }
   
-  .stat-item {
-    max-width: 260px;
-    min-height: 110px;
+  .stats {
+    padding: 0 10px;
+  }
+  
+  .stat-card {
     padding: 20px 15px;
+    min-height: 140px;
   }
   
-  .stat-item h3 {
-    font-size: 2rem;
+  .stat-number {
+    font-size: clamp(1.4rem, 4vw, 2rem);
   }
   
-  .stat-item p {
-    font-size: 0.9rem;
+  .stat-card p {
+    font-size: clamp(0.8rem, 2vw, 0.9rem);
   }
   
   .stat-icon {
-    font-size: 1.8rem;
+    font-size: clamp(1.4rem, 4vw, 1.8rem);
   }
 } 
