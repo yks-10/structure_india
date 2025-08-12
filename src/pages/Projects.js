@@ -118,7 +118,7 @@ const Projects = () => {
         {/* Project Video */}
         <section className="section project-video">
           <h2 className="section-title">Project Walkthrough</h2>
-          <div className={`video-wrapper ${videoLoading ? 'loading' : ''}`}>
+          <div className="video-wrapper">
             {!videoError ? (
               <video 
                 controls 
@@ -141,6 +141,40 @@ const Projects = () => {
                 </a>
               </div>
             )}
+          </div>
+          
+          {/* YouTube Video Alternative */}
+          <div className="youtube-video-wrapper">
+            <h3 style={{ textAlign: 'center', marginBottom: '20px', color: 'var(--text-primary)' }}>
+              Watch on YouTube
+            </h3>
+            <div className="youtube-embed">
+              <iframe
+                width="100%"
+                height="400"
+                src="https://www.youtube.com/embed/CSd8Ih5hpgU"
+                title="Project Walkthrough Video"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                style={{ borderRadius: '12px', boxShadow: '0 8px 24px rgba(0, 0, 0, 0.35)' }}
+              ></iframe>
+            </div>
+            <div style={{ textAlign: 'center', marginTop: '15px' }}>
+              <a 
+                href="https://youtu.be/CSd8Ih5hpgU" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                style={{ 
+                  color: 'var(--secondary-color)', 
+                  textDecoration: 'none', 
+                  fontWeight: '600',
+                  fontSize: '1.1rem'
+                }}
+              >
+                Open in YouTube ↗
+              </a>
+            </div>
           </div>
         </section>
       </div>

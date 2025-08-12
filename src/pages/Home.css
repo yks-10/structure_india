@@ -1290,3 +1290,206 @@
     box-shadow: 0 7px 20px rgba(251, 191, 36, 0.4);
   }
 } 
+
+/* Light mode support */
+@media (prefers-color-scheme: light) {
+  .home-container {
+    color: #333;
+  }
+  
+  .about {
+    background: linear-gradient(135deg, #f8fafc, #e6eef5);
+  }
+  
+  .about h2 {
+    color: #00264d;
+  }
+  
+  .about p {
+    color: #555;
+  }
+  
+  .services {
+    background: #fff;
+  }
+  
+  .services h2 {
+    color: #00264d;
+  }
+  
+  .service-card {
+    background: #fff;
+    border-color: rgba(0, 0, 0, 0.05);
+  }
+  
+  .service-card h3 {
+    color: #00264d;
+  }
+  
+  .service-card p {
+    color: #555;
+  }
+  
+  .why-choose {
+    background: linear-gradient(135deg, #f0f5fa, #e0ecf7);
+  }
+  
+  .why-choose h2 {
+    color: #00264d;
+  }
+  
+  .stat-card {
+    background: #fff;
+    border-color: rgba(0, 0, 0, 0.05);
+  }
+  
+  .stat-number {
+    color: #00264d;
+  }
+  
+  .stat-card p {
+    color: #555;
+  }
+  
+  .testimonials {
+    background: linear-gradient(135deg, #f9f9f9, #e6eef5);
+  }
+  
+  .testimonials h2 {
+    color: #00264d;
+  }
+  
+  .testimonial-card {
+    background: #fff;
+    border-color: rgba(0, 0, 0, 0.05);
+  }
+  
+  .testimonial-quote {
+    color: #444;
+  }
+  
+  .testimonial-author {
+    color: #00264d;
+  }
+  
+  .testimonial-author span {
+    color: #777;
+  }
+  
+  .cta {
+    background: linear-gradient(135deg, #e0ecf7, #d0e0f0);
+    color: #00264d;
+  }
+  
+  .cta h2 {
+    color: #00264d;
+  }
+  
+  .cta p {
+    color: #555;
+  }
+}
+
+/* Force light mode for mobile devices */
+@media (max-width: 768px) {
+  .home-container {
+    color: #333 !important;
+  }
+  
+  .about {
+    background: linear-gradient(135deg, #f8fafc, #e6eef5) !important;
+  }
+  
+  .about h2 {
+    color: #00264d !important;
+  }
+  
+  .about p {
+    color: #555 !important;
+  }
+  
+  .services {
+    background: #fff !important;
+  }
+  
+  .services h2 {
+    color: #00264d !important;
+  }
+  
+  .service-card {
+    background: #fff !important;
+    border-color: rgba(0, 0, 0, 0.05) !important;
+  }
+  
+  .service-card h3 {
+    color: #00264d !important;
+  }
+  
+  .service-card p {
+    color: #555 !important;
+  }
+  
+  .why-choose {
+    background: linear-gradient(135deg, #f0f5fa, #e0ecf7) !important;
+  }
+  
+  .why-choose h2 {
+    color: #00264d !important;
+  }
+  
+  .stat-card {
+    background: #fff !important;
+    border-color: rgba(0, 0, 0, 0.05) !important;
+  }
+  
+  .stat-number {
+    color: #00264d !important;
+  }
+  
+  .stat-card p {
+    color: #555 !important;
+  }
+  
+  .testimonials {
+    background: linear-gradient(135deg, #f9f9f9, #e6eef5) !important;
+  }
+  
+  .testimonials h2 {
+    color: #00264d !important;
+  }
+  
+  .testimonial-card {
+    background: #fff !important;
+    border-color: rgba(0, 0, 0, 0.05) !important;
+  }
+  
+  .testimonial-quote {
+    color: #444 !important;
+  }
+  
+  .testimonial-author {
+    color: #00264d !important;
+  }
+  
+  .testimonial-author span {
+    color: #777 !important;
+  }
+  
+  .cta {
+    background: linear-gradient(135deg, #e0ecf7, #d0e0f0) !important;
+    color: #00264d !important;
+  }
+  
+  .cta h2 {
+    color: #00264d !important;
+  }
+  
+  .cta p {
+    color: #555 !important;
+  }
+  
+  .hero h1,
+  .hero p {
+    color: #fff !important;
+  }
+} 

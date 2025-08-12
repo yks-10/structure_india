@@ -329,3 +329,107 @@ textarea {
     height: 300px;
   }
 } 
+
+/* Light mode support */
+@media (prefers-color-scheme: light) {
+  .contact-page {
+    background-color: #fff;
+    color: #333;
+  }
+  
+  .contact-info {
+    background: linear-gradient(180deg, #ff7e5f, #feb47b);
+    color: #fff;
+  }
+  
+  .contact-form {
+    background: #fff;
+    border-color: #dee2e6;
+  }
+  
+  .contact-form h2 {
+    color: #00264d;
+  }
+  
+  .form-group label {
+    color: #495057;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    background: #f8f9fa;
+    border-color: #dee2e6;
+    color: #333;
+  }
+  
+  .form-group input:focus,
+  .form-group textarea:focus {
+    border-color: #f4a700;
+    box-shadow: 0 0 0 2px rgba(244, 167, 0, 0.2);
+  }
+  
+  .submit-btn {
+    background: #f4a700;
+    color: #fff;
+  }
+  
+  .submit-btn:hover {
+    background: #e69800;
+  }
+}
+
+/* Force light mode for mobile devices */
+@media (max-width: 768px) {
+  .contact-page {
+    background-color: #fff !important;
+    color: #333 !important;
+  }
+  
+  .contact-info {
+    background: linear-gradient(180deg, #ff7e5f, #feb47b) !important;
+    color: #fff !important;
+  }
+  
+  .contact-form {
+    background: #fff !important;
+    border-color: #dee2e6 !important;
+  }
+  
+  .contact-form h2 {
+    color: #00264d !important;
+  }
+  
+  .form-group label {
+    color: #495057 !important;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    background: #f8f9fa !important;
+    border-color: #dee2e6 !important;
+    color: #333 !important;
+  }
+  
+  .form-group input:focus,
+  .form-group textarea:focus {
+    border-color: #f4a700 !important;
+    box-shadow: 0 0 0 2px rgba(244, 167, 0, 0.2) !important;
+  }
+  
+  .submit-btn {
+    background: #f4a700 !important;
+    color: #fff !important;
+  }
+  
+  .submit-btn:hover {
+    background: #e69800 !important;
+  }
+  
+  .contact-header h1 {
+    color: #fff !important;
+  }
+  
+  .contact-header p {
+    color: #e2e8f0 !important;
+  }
+} 

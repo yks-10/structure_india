@@ -43,7 +43,7 @@ const Clients = () => {
       {/* Breadcrumb */}
       <nav className="breadcrumb">
         <div className="container">
-          <Link to="/">Home</Link> > <span>Our Clients</span>
+          <Link to="/">Home</Link>  <span>Our Clients</span>
         </div>
       </nav>
 

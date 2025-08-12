@@ -624,4 +624,57 @@
   .specialized-service p {
     color: #495057;
   }
+}
+
+/* Force light mode for mobile devices */
+@media (max-width: 768px) {
+  .services-page {
+    background-color: #fff !important;
+    color: #333 !important;
+  }
+  
+  .intro-section {
+    background: #f0f8ff !important;
+  }
+  
+  .intro-content h2 {
+    color: #00264d !important;
+  }
+  
+  .intro-content p {
+    color: #444 !important;
+  }
+  
+  .main-services-section {
+    background: #fff !important;
+  }
+  
+  .specialized-services-section {
+    background: #fff !important;
+  }
+  
+  .specialized-service {
+    background: #f8f9fa !important;
+    border-color: #dee2e6 !important;
+  }
+  
+  .specialized-service h3 {
+    color: #00264d !important;
+  }
+  
+  .specialized-service p {
+    color: #495057 !important;
+  }
+  
+  .service-icon {
+    color: #f4a700 !important;
+  }
+  
+  .services-header h1 {
+    color: #fff !important;
+  }
+  
+  .services-header p {
+    color: #e2e8f0 !important;
+  }
 } 
