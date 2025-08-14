@@ -1413,20 +1413,20 @@
   }
   
   .services h2 {
-    color: #00264d !important;
+    color: var(--primary-color) !important;
   }
   
   .service-card {
-    background: #fff !important;
-    border-color: rgba(0, 0, 0, 0.05) !important;
+    background: #2d3748 !important;
+    border-color: #4a5568 !important;
   }
   
   .service-card h3 {
-    color: #00264d !important;
+    color: #fbbf24 !important;
   }
   
   .service-card p {
-    color: #555 !important;
+    color: #e2e8f0 !important;
   }
   
   .why-choose {
@@ -1434,7 +1434,7 @@
   }
   
   .why-choose h2 {
-    color: #00264d !important;
+    color: var(--primary-color) !important;
   }
   
   .stat-card {
@@ -1443,11 +1443,11 @@
   }
   
   .stat-number {
-    color: #00264d !important;
+    color: var(--primary-color) !important;
   }
   
   .stat-card p {
-    color: #555 !important;
+    color: #666 !important;
   }
   
   .testimonials {
@@ -1455,7 +1455,7 @@
   }
   
   .testimonials h2 {
-    color: #00264d !important;
+    color: var(--primary-color) !important;
   }
   
   .testimonial-card {
@@ -1468,7 +1468,7 @@
   }
   
   .testimonial-author {
-    color: #00264d !important;
+    color: var(--primary-color) !important;
   }
   
   .testimonial-author span {

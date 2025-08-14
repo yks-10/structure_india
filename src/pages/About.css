@@ -1008,8 +1008,20 @@
     color: #e2e8f0 !important;
   }
   
+  .mission-section .section-title {
+    color: #fbbf24 !important;
+  }
+  
   .mission-section .section-title:after {
     background-color: var(--secondary-color) !important;
+  }
+  
+  .mission-box h2 {
+    color: #fbbf24 !important;
+  }
+  
+  .mission-box p {
+    color: #e2e8f0 !important;
   }
   
   .clients-section .section-title:after {

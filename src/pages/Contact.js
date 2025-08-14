@@ -84,7 +84,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="contact-page">
+    <div className="clients-page">
       {/* Header */}
       <div className="contact-header">
         <div className="container">
